@@ -2,7 +2,7 @@
 
 **WIRL is an Android app for mobile IRL live streaming.** Choose a camera, tune the picture, add on-screen browser widgets and send one stream to Twitch, YouTube, or another RTMP/RTMPS destination.
 
-This repository hosts the WIRL website on GitHub Pages. The current landing page is a placeholder showing the WIRL wordmark centered in Geist. An Android APK will be added here for download when it is ready.
+This repository hosts the WIRL website on GitHub Pages. The landing page introduces the app and its main features; a separate download page links to GitHub releases. The visual palette is shared with the Android app. An Android APK will be added to releases when it is ready.
 
 **Сначала на русском:** [Русская версия](#wirl-на-русском)
 
@@ -45,8 +45,8 @@ The README is available in English and Russian. In the current app build, most i
 ## Website and APK
 
 - Website: [vaipen.github.io/WIRL](https://vaipen.github.io/WIRL/)
-- Website source: `index.html`, published by GitHub Pages from the `main` branch and repository root.
-- Android APK: to be added to this repository when a distributable build is ready.
+- Website source: `index.html`, `download.html` and `styles.css`, published by GitHub Pages from the `main` branch and repository root.
+- Android APK: to be added to GitHub Releases when a distributable build is ready.
 
 ---
 
@@ -54,7 +54,7 @@ The README is available in English and Russian. In the current app build, most i
 
 **WIRL — приложение для Android для мобильных IRL-трансляций.** Выбирайте камеру, настраивайте изображение, добавляйте браузерные виджеты поверх видео и отправляйте трансляцию на Twitch, YouTube или любой другой RTMP/RTMPS-сервер.
 
-Этот репозиторий используется для сайта WIRL на GitHub Pages. Пока на главной странице — заглушка: надпись WIRL шрифтом Geist по центру. APK приложения появится здесь, когда будет готов файл для скачивания.
+Этот репозиторий используется для сайта WIRL на GitHub Pages. На главной странице — описание приложения и его функций, а для скачивания создана отдельная страница со ссылкой на релизы GitHub. Цветовая схема сайта совпадает с палитрой Android-приложения. APK появится в GitHub Releases, когда будет готов файл для распространения.
 
 ## Возможности
 
@@ -95,5 +95,5 @@ README написан на русском и английском. В текущ
 ## Сайт и APK
 
 - Сайт: [vaipen.github.io/WIRL](https://vaipen.github.io/WIRL/)
-- Исходник сайта — `index.html`; GitHub Pages публикует его из корня ветки `main`.
-- APK Android-приложения будет добавлен в этот репозиторий, когда будет готов файл для распространения.
+- Файлы сайта: `index.html`, `download.html` и `styles.css`; GitHub Pages публикует их из корня ветки `main`.
+- APK Android-приложения будет добавлен в GitHub Releases, когда будет готов файл для распространения.

@@ -3,38 +3,96 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#ffffff" />
-    <meta name="description" content="WIRL" />
-    <title>WIRL</title>
+    <meta name="theme-color" content="#211e24" />
+    <meta name="description" content="WIRL — мобильные IRL-трансляции прямо с телефона." />
+    <title>WIRL — стрим начинается с тебя</title>
+    <link rel="icon" type="image/png" href="assets/wirl-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <style>
-      * { box-sizing: border-box; }
-      html, body { min-height: 100%; }
-      body {
-        margin: 0;
-        min-height: 100svh;
-        display: grid;
-        place-items: center;
-        background: #fff;
-        color: #111;
-        font-family: "Geist", sans-serif;
-        -webkit-font-smoothing: antialiased;
-        text-rendering: geometricPrecision;
-      }
-      h1 {
-        margin: 0;
-        font-size: clamp(3.5rem, 14vw, 9rem);
-        font-weight: 600;
-        letter-spacing: -0.085em;
-        line-height: 1;
-      }
-    </style>
+    <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <main aria-label="WIRL">
-      <h1>WIRL</h1>
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="WIRL — главная">
+        <img src="assets/wirl-icon.png" alt="" />
+        <span>WIRL</span>
+      </a>
+      <nav aria-label="Основная навигация">
+        <a href="#features">Возможности</a>
+        <a class="nav-download" href="download.html">Скачать <span aria-hidden="true">↗</span></a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow"><span class="live-dot"></span> IRL-стриминг без лишнего</p>
+          <h1>Просто возьми телефон<br />и выйди в эфир.</h1>
+          <p class="hero-subtitle">Твои моменты — сразу в трансляции. Камера, чат и всё нужное для стрима уже с тобой.</p>
+          <p class="compatibility">Поддержка широкоугольной камеры на совместимых Android-устройствах</p>
+          <a class="button button-primary" href="download.html">Скачать WIRL <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="hero-art" aria-label="Иконка WIRL">
+          <div class="art-orbit orbit-one"></div>
+          <div class="art-orbit orbit-two"></div>
+          <div class="art-glow"></div>
+          <img src="assets/wirl-icon.png" alt="WIRL" />
+          <span class="art-caption">GO LIVE<br />YOUR WAY</span>
+        </div>
+        <div class="hero-index"><span>01</span><span>СНИМАЙ · НАСТРАИВАЙ · СТРИМЬ</span></div>
+      </section>
+
+      <section class="intro" id="features">
+        <p class="eyebrow">СВОБОДА В КАДРЕ</p>
+        <h2>Всё для живого<br /><span>эфира с телефона.</span></h2>
+        <p>WIRL объединяет камеру, трансляцию и оформление эфира в одном простом пространстве.</p>
+      </section>
+
+      <section class="feature-grid" aria-label="Возможности WIRL">
+        <article class="feature-card feature-camera">
+          <div class="card-top"><span>01 / КАМЕРА</span><span class="card-icon">◉</span></div>
+          <div class="lens-graphic"><span class="lens lens-small"></span><span class="lens lens-large"></span><span class="lens lens-wide"></span></div>
+          <h3>Твой взгляд.<br />Твои объективы.</h3>
+          <p>Переключайся между доступными камерами и точно настраивай изображение через Camera2. WIRL отключает запрос на шумоподавление, чтобы сохранить больше деталей.</p>
+          <span class="card-note">УЛЬТРАШИРИК — ЕСЛИ ЕГО ОТКРЫВАЕТ УСТРОЙСТВО</span>
+        </article>
+
+        <article class="feature-card feature-live">
+          <div class="card-top"><span>02 / ТРАНСЛЯЦИЯ</span><span class="card-icon">↗</span></div>
+          <div class="platform-list"><span>Twitch</span><span>YouTube</span><span>RTMP / RTMPS</span></div>
+          <h3>Один эфир.<br />Твои площадки.</h3>
+          <p>Войди в Twitch, управляй информацией трансляции прямо в приложении или добавь YouTube и свои RTMP-адреса. Можно вести эфир сразу на несколько площадок.</p>
+          <span class="card-note">КАЧЕСТВО И БИТРЕЙТ — ПОД ТВОИ УСЛОВИЯ</span>
+        </article>
+
+        <article class="feature-card feature-overlay">
+          <div class="card-top"><span>03 / ОФОРМЛЕНИЕ</span><span class="card-icon">▧</span></div>
+          <div class="overlay-preview"><span class="preview-tag">LIVE CHAT</span><span class="preview-line"></span><span class="preview-line short"></span><span class="preview-alert">+ новый донат</span></div>
+          <h3>Эфир, который<br />похож на тебя.</h3>
+          <p>Добавляй браузерные виджеты вроде DonationAlerts и встраивай чат Twitch. Настрой положение источников и внешний вид чата под свой эфир.</p>
+          <span class="card-note">ВИДЖЕТЫ · ЧАТ · ТВОЙ СТИЛЬ</span>
+        </article>
+
+        <article class="feature-card feature-control">
+          <div class="card-top"><span>04 / КОНТРОЛЬ</span><span class="card-icon">⌁</span></div>
+          <div class="signal-graphic"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <h3>Следи за эфиром,<br />а не за настройками.</h3>
+          <p>Выключай камеру или микрофон на ходу. Смотри расход мобильного трафика и примерную стоимость часа трансляции в гигабайтах.</p>
+          <span class="card-note">ТЫ УПРАВЛЯЕШЬ КАЖДЫМ МОМЕНТОМ</span>
+        </article>
+      </section>
+
+      <section class="closing">
+        <div class="closing-copy">
+          <p class="eyebrow">ТВОЙ ЭФИР НАЧИНАЕТСЯ ЗДЕСЬ</p>
+          <h2>Меньше подготовки.<br />Больше настоящего.</h2>
+          <a class="button button-secondary" href="download.html">Попробовать WIRL <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="closing-wordmark" aria-label="WIRL">WIRL</div>
+      </section>
     </main>
+
+    <footer class="site-footer"><a class="brand" href="index.html"><img src="assets/wirl-icon.png" alt="" /><span>WIRL</span></a><span>IRL — это быть там, где происходит жизнь.</span><a href="download.html">Скачать приложение ↗</a></footer>
   </body>
 </html>
