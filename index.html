@@ -5,94 +5,103 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#211e24" />
     <meta name="description" content="WIRL — мобильные IRL-трансляции прямо с телефона." />
-    <title>WIRL — стрим начинается с тебя</title>
+    <title>WIRL — выходи в эфир</title>
     <link rel="icon" type="image/png" href="assets/wirl-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
-    <header class="site-header">
-      <a class="brand" href="index.html" aria-label="WIRL — главная">
-        <img src="assets/wirl-icon.png" alt="" />
-        <span>WIRL</span>
-      </a>
-      <nav aria-label="Основная навигация">
-        <a href="#features">Возможности</a>
-        <a class="nav-download" href="download.html">Скачать <span aria-hidden="true">↗</span></a>
-      </nav>
-    </header>
+  <body class="home-page">
+    <svg class="fx-defs" aria-hidden="true" focusable="false">
+      <defs>
+        <filter id="grainFilter" x="0" y="0" width="100%" height="100%">
+          <feTurbulence type="fractalNoise" baseFrequency=".82" numOctaves="2" stitchTiles="stitch" result="noise">
+            <animate attributeName="baseFrequency" dur=".22s" values=".76;.92;.81;.88;.76" repeatCount="indefinite" />
+          </feTurbulence>
+          <feColorMatrix type="saturate" values="0" />
+          <feComponentTransfer><feFuncA type="table" tableValues="0 .42" /></feComponentTransfer>
+        </filter>
+        <filter id="textWarp" x="-5%" y="-10%" width="110%" height="120%">
+          <feTurbulence type="fractalNoise" baseFrequency=".006 .018" numOctaves="2" seed="8" result="ripples">
+            <animate attributeName="baseFrequency" dur="7s" values=".004 .014;.008 .02;.004 .014" repeatCount="indefinite" />
+          </feTurbulence>
+          <feDisplacementMap in="SourceGraphic" in2="ripples" scale="2.2" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+        <filter id="burstGlow" x="-30%" y="-60%" width="160%" height="220%" color-interpolation-filters="sRGB">
+          <feGaussianBlur stdDeviation="3.5" result="soft" />
+          <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="rays" />
+          <feComposite in="rays" in2="SourceAlpha" operator="in" result="outlineRays" />
+          <feMerge><feMergeNode in="outlineRays" /><feMergeNode in="soft" /><feMergeNode in="SourceGraphic" /></feMerge>
+        </filter>
+        <radialGradient id="outlineLight" cx="50%" cy="45%" r="72%">
+          <stop offset="0" stop-color="#fff9ed" />
+          <stop offset=".28" stop-color="#f7d5ef" />
+          <stop offset=".64" stop-color="#d6a2d2" />
+          <stop offset="1" stop-color="#bedb8c" />
+        </radialGradient>
+      </defs>
+    </svg>
 
     <main>
-      <section class="hero">
-        <div class="hero-copy">
-          <p class="eyebrow"><span class="live-dot"></span> IRL-стриминг без лишнего</p>
-          <h1>Просто возьми телефон<br />и выйди в эфир.</h1>
-          <p class="hero-subtitle">Твои моменты — сразу в трансляции. Камера, чат и всё нужное для стрима уже с тобой.</p>
-          <p class="compatibility">Поддержка широкоугольной камеры на совместимых Android-устройствах</p>
-          <a class="button button-primary" href="download.html">Скачать WIRL <span aria-hidden="true">↗</span></a>
+      <section class="title-screen" aria-label="WIRL — IRL-стриминг без лишнего">
+        <video class="title-video" autoplay muted loop playsinline preload="auto" poster="assets/title-poster.jpg" aria-hidden="true">
+          <source src="assets/title.mp4" type="video/mp4" />
+        </video>
+        <div class="title-tint"></div>
+        <div class="grain"></div>
+
+        <div class="title-topline"><span class="live-dot"></span><span>IRL-СТРИМИНГ БЕЗ ЛИШНЕГО</span></div>
+
+        <svg class="title-mark" viewBox="0 0 1200 460" role="img" aria-label="WIRL">
+          <text class="mark-halo" x="50%" y="78%" text-anchor="middle">WIRL</text>
+          <text class="mark-outline" x="50%" y="78%" text-anchor="middle">WIRL</text>
+        </svg>
+
+        <div class="title-bottomline">
+          <p>Просто возьми телефон<br class="mobile-break" /> и выйди в эфир.</p>
+          <a class="icon-button" href="download.html" aria-label="Перейти к скачиванию">
+            <span class="material-symbols-outlined" aria-hidden="true">arrow_downward</span>
+          </a>
         </div>
-        <div class="hero-art" aria-label="Иконка WIRL">
-          <div class="art-orbit orbit-one"></div>
-          <div class="art-orbit orbit-two"></div>
-          <div class="art-glow"></div>
-          <img src="assets/wirl-icon.png" alt="WIRL" />
-          <span class="art-caption">GO LIVE<br />YOUR WAY</span>
+        <a class="scroll-hint" href="#features"><span class="material-symbols-outlined" aria-hidden="true">south</span> ЛИСТАЙ</a>
+      </section>
+
+      <section class="features" id="features" aria-label="Возможности WIRL">
+        <div class="feature-grid">
+          <article class="feature-card feature-camera">
+            <div class="card-top"><span>01 / КАМЕРА</span><span class="material-symbols-outlined card-icon" aria-hidden="true">camera</span></div>
+            <div class="lens-graphic" aria-hidden="true"><span class="lens lens-small"></span><span class="lens lens-large"></span><span class="lens lens-wide"></span></div>
+            <h2>Твой взгляд.<br />Твои объективы.</h2>
+            <p>Настрой камеру через Camera2 и сохрани детали. Ультраширокий объектив доступен на совместимых устройствах.</p>
+          </article>
+
+          <article class="feature-card feature-live">
+            <div class="card-top"><span>02 / ЭФИР</span><span class="material-symbols-outlined card-icon" aria-hidden="true">podcasts</span></div>
+            <div class="platform-list" aria-label="Поддерживаемые платформы"><span>Twitch</span><span>YouTube</span><span>RTMP</span></div>
+            <h2>Один эфир.<br />Твои площадки.</h2>
+            <p>Управляй трансляцией Twitch, добавляй YouTube и свои RTMP-адреса. Выбирай качество под свою сеть.</p>
+          </article>
+
+          <article class="feature-card feature-overlay">
+            <div class="card-top"><span>03 / ОФОРМЛЕНИЕ</span><span class="material-symbols-outlined card-icon" aria-hidden="true">web</span></div>
+            <div class="overlay-preview" aria-hidden="true"><span class="preview-tag">LIVE CHAT</span><span class="preview-line"></span><span class="preview-line short"></span><span class="preview-alert">+ новый донат</span></div>
+            <h2>Твой эфир.<br />Твои правила.</h2>
+            <p>Добавляй браузерные виджеты и чат Twitch. Настрой композицию прямо с телефона.</p>
+          </article>
+
+          <article class="feature-card feature-control">
+            <div class="card-top"><span>04 / КОНТРОЛЬ</span><span class="material-symbols-outlined card-icon" aria-hidden="true">tune</span></div>
+            <div class="signal-graphic" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+            <h2>Всё важное.<br />Под рукой.</h2>
+            <p>Выключай камеру и микрофон в эфире. Следи за мобильным трафиком и расходом за час.</p>
+          </article>
         </div>
-        <div class="hero-index"><span>01</span><span>СНИМАЙ · НАСТРАИВАЙ · СТРИМЬ</span></div>
       </section>
 
-      <section class="intro" id="features">
-        <p class="eyebrow">СВОБОДА В КАДРЕ</p>
-        <h2>Всё для живого<br /><span>эфира с телефона.</span></h2>
-        <p>WIRL объединяет камеру, трансляцию и оформление эфира в одном простом пространстве.</p>
-      </section>
+      <a class="download-callout" href="download.html"><span>ГОТОВ ВЫЙТИ В ЭФИР?</span><span class="material-symbols-outlined" aria-hidden="true">north_east</span></a>
 
-      <section class="feature-grid" aria-label="Возможности WIRL">
-        <article class="feature-card feature-camera">
-          <div class="card-top"><span>01 / КАМЕРА</span><span class="card-icon">◉</span></div>
-          <div class="lens-graphic"><span class="lens lens-small"></span><span class="lens lens-large"></span><span class="lens lens-wide"></span></div>
-          <h3>Твой взгляд.<br />Твои объективы.</h3>
-          <p>Переключайся между доступными камерами и точно настраивай изображение через Camera2. WIRL отключает запрос на шумоподавление, чтобы сохранить больше деталей.</p>
-          <span class="card-note">УЛЬТРАШИРИК — ЕСЛИ ЕГО ОТКРЫВАЕТ УСТРОЙСТВО</span>
-        </article>
-
-        <article class="feature-card feature-live">
-          <div class="card-top"><span>02 / ТРАНСЛЯЦИЯ</span><span class="card-icon">↗</span></div>
-          <div class="platform-list"><span>Twitch</span><span>YouTube</span><span>RTMP / RTMPS</span></div>
-          <h3>Один эфир.<br />Твои площадки.</h3>
-          <p>Войди в Twitch, управляй информацией трансляции прямо в приложении или добавь YouTube и свои RTMP-адреса. Можно вести эфир сразу на несколько площадок.</p>
-          <span class="card-note">КАЧЕСТВО И БИТРЕЙТ — ПОД ТВОИ УСЛОВИЯ</span>
-        </article>
-
-        <article class="feature-card feature-overlay">
-          <div class="card-top"><span>03 / ОФОРМЛЕНИЕ</span><span class="card-icon">▧</span></div>
-          <div class="overlay-preview"><span class="preview-tag">LIVE CHAT</span><span class="preview-line"></span><span class="preview-line short"></span><span class="preview-alert">+ новый донат</span></div>
-          <h3>Эфир, который<br />похож на тебя.</h3>
-          <p>Добавляй браузерные виджеты вроде DonationAlerts и встраивай чат Twitch. Настрой положение источников и внешний вид чата под свой эфир.</p>
-          <span class="card-note">ВИДЖЕТЫ · ЧАТ · ТВОЙ СТИЛЬ</span>
-        </article>
-
-        <article class="feature-card feature-control">
-          <div class="card-top"><span>04 / КОНТРОЛЬ</span><span class="card-icon">⌁</span></div>
-          <div class="signal-graphic"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-          <h3>Следи за эфиром,<br />а не за настройками.</h3>
-          <p>Выключай камеру или микрофон на ходу. Смотри расход мобильного трафика и примерную стоимость часа трансляции в гигабайтах.</p>
-          <span class="card-note">ТЫ УПРАВЛЯЕШЬ КАЖДЫМ МОМЕНТОМ</span>
-        </article>
-      </section>
-
-      <section class="closing">
-        <div class="closing-copy">
-          <p class="eyebrow">ТВОЙ ЭФИР НАЧИНАЕТСЯ ЗДЕСЬ</p>
-          <h2>Меньше подготовки.<br />Больше настоящего.</h2>
-          <a class="button button-secondary" href="download.html">Попробовать WIRL <span aria-hidden="true">↗</span></a>
-        </div>
-        <div class="closing-wordmark" aria-label="WIRL">WIRL</div>
-      </section>
+      <section class="closing-wordmark" aria-label="WIRL"><span>WIRL</span></section>
     </main>
-
-    <footer class="site-footer"><a class="brand" href="index.html"><img src="assets/wirl-icon.png" alt="" /><span>WIRL</span></a><span>IRL — это быть там, где происходит жизнь.</span><a href="download.html">Скачать приложение ↗</a></footer>
   </body>
 </html>

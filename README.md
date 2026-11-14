@@ -45,7 +45,7 @@ The README is available in English and Russian. In the current app build, most i
 ## Website and APK
 
 - Website: [vaipen.github.io/WIRL](https://vaipen.github.io/WIRL/)
-- Website source: `index.html`, `download.html` and `styles.css`, published by GitHub Pages from the `main` branch and repository root.
+- Website source: `index.html`, `download.html`, `styles.css` and the title clip in `assets/`, published by GitHub Pages from the `main` branch and repository root.
 - Android APK: to be added to GitHub Releases when a distributable build is ready.
 
 ---
@@ -95,5 +95,5 @@ README написан на русском и английском. В текущ
 ## Сайт и APK
 
 - Сайт: [vaipen.github.io/WIRL](https://vaipen.github.io/WIRL/)
-- Файлы сайта: `index.html`, `download.html` и `styles.css`; GitHub Pages публикует их из корня ветки `main`.
+- Файлы сайта: `index.html`, `download.html`, `styles.css` и ролик первого экрана в `assets/`; GitHub Pages публикует их из корня ветки `main`.
 - APK Android-приложения будет добавлен в GitHub Releases, когда будет готов файл для распространения.
