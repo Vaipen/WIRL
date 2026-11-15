@@ -3,105 +3,68 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#211e24" />
-    <meta name="description" content="WIRL — мобильные IRL-трансляции прямо с телефона." />
-    <title>WIRL — выходи в эфир</title>
-    <link rel="icon" type="image/png" href="assets/wirl-icon.png" />
+    <meta name="theme-color" content="#000000" />
+    <meta name="description" content="WIRL — IRL-стриминг с телефона." />
+    <title>WIRL — IRL streaming</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@600;700&family=Google+Sans+Flex:opsz,wght@6..96,400..700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body class="home-page">
-    <svg class="fx-defs" aria-hidden="true" focusable="false">
-      <defs>
-        <filter id="grainFilter" x="0" y="0" width="100%" height="100%">
-          <feTurbulence type="fractalNoise" baseFrequency=".82" numOctaves="2" stitchTiles="stitch" result="noise">
-            <animate attributeName="baseFrequency" dur=".22s" values=".76;.92;.81;.88;.76" repeatCount="indefinite" />
-          </feTurbulence>
-          <feColorMatrix type="saturate" values="0" />
-          <feComponentTransfer><feFuncA type="table" tableValues="0 .42" /></feComponentTransfer>
-        </filter>
-        <filter id="textWarp" x="-5%" y="-10%" width="110%" height="120%">
-          <feTurbulence type="fractalNoise" baseFrequency=".006 .018" numOctaves="2" seed="8" result="ripples">
-            <animate attributeName="baseFrequency" dur="7s" values=".004 .014;.008 .02;.004 .014" repeatCount="indefinite" />
-          </feTurbulence>
-          <feDisplacementMap in="SourceGraphic" in2="ripples" scale="2.2" xChannelSelector="R" yChannelSelector="G" />
-        </filter>
-        <filter id="burstGlow" x="-30%" y="-60%" width="160%" height="220%" color-interpolation-filters="sRGB">
-          <feGaussianBlur stdDeviation="3.5" result="soft" />
-          <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="rays" />
-          <feComposite in="rays" in2="SourceAlpha" operator="in" result="outlineRays" />
-          <feMerge><feMergeNode in="outlineRays" /><feMergeNode in="soft" /><feMergeNode in="SourceGraphic" /></feMerge>
-        </filter>
-        <radialGradient id="outlineLight" cx="50%" cy="45%" r="72%">
-          <stop offset="0" stop-color="#fff9ed" />
-          <stop offset=".28" stop-color="#f7d5ef" />
-          <stop offset=".64" stop-color="#d6a2d2" />
-          <stop offset="1" stop-color="#bedb8c" />
-        </radialGradient>
-      </defs>
-    </svg>
-
     <main>
-      <section class="title-screen" aria-label="WIRL — IRL-стриминг без лишнего">
-        <video class="title-video" autoplay muted loop playsinline preload="auto" poster="assets/title-poster.jpg" aria-hidden="true">
-          <source src="assets/title.mp4" type="video/mp4" />
-        </video>
-        <div class="title-tint"></div>
-        <div class="grain"></div>
-
-        <div class="title-topline"><span class="live-dot"></span><span>IRL-СТРИМИНГ БЕЗ ЛИШНЕГО</span></div>
-
-        <svg class="title-mark" viewBox="0 0 1200 460" role="img" aria-label="WIRL">
-          <text class="mark-halo" x="50%" y="78%" text-anchor="middle">WIRL</text>
-          <text class="mark-outline" x="50%" y="78%" text-anchor="middle">WIRL</text>
-        </svg>
-
-        <div class="title-bottomline">
-          <p>Просто возьми телефон<br class="mobile-break" /> и выйди в эфир.</p>
-          <a class="icon-button" href="download.html" aria-label="Перейти к скачиванию">
-            <span class="material-symbols-outlined" aria-hidden="true">arrow_downward</span>
-          </a>
+      <section class="hero">
+        <div class="hero-title" aria-label="WIRL">
+          <svg viewBox="0 0 1200 330" role="img" aria-label="WIRL">
+            <defs><linearGradient id="wirlGradient" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#aaff00"/><stop offset=".52" stop-color="#8dff00"/><stop offset="1" stop-color="#b4ff36"/></linearGradient></defs>
+            <text x="50%" y="78%" text-anchor="middle">WIRL</text>
+          </svg>
         </div>
-        <a class="scroll-hint" href="#features"><span class="material-symbols-outlined" aria-hidden="true">south</span> ЛИСТАЙ</a>
+        <a class="download-button glow-green" href="download.html" data-i18n="download">Загрузить</a>
+        <span class="hero-scroll" aria-hidden="true">↓</span>
       </section>
 
-      <section class="features" id="features" aria-label="Возможности WIRL">
-        <div class="feature-grid">
-          <article class="feature-card feature-camera">
-            <div class="card-top"><span>01 / КАМЕРА</span><span class="material-symbols-outlined card-icon" aria-hidden="true">camera</span></div>
-            <div class="lens-graphic" aria-hidden="true"><span class="lens lens-small"></span><span class="lens lens-large"></span><span class="lens lens-wide"></span></div>
-            <h2>Твой взгляд.<br />Твои объективы.</h2>
-            <p>Настрой камеру через Camera2 и сохрани детали. Ультраширокий объектив доступен на совместимых устройствах.</p>
-          </article>
+      <section class="showcase" aria-label="WIRL features">
+        <!-- VIDEO SLOT 1: put your file in assets/videos/ and replace data-video below. -->
+        <article class="showcase-row row-right">
+          <div class="video-frame glow-green">
+            <video class="feature-video" playsinline controls preload="metadata" data-video="assets/videos/wide-camera.mp4"></video>
+            <div class="video-placeholder" data-i18n="videoPlaceholder">Здесь будет ваше видео</div>
+          </div>
+          <h2 data-i18n="wideCamera">Поддержка<br />широкоугольной камеры</h2>
+        </article>
 
-          <article class="feature-card feature-live">
-            <div class="card-top"><span>02 / ЭФИР</span><span class="material-symbols-outlined card-icon" aria-hidden="true">podcasts</span></div>
-            <div class="platform-list" aria-label="Поддерживаемые платформы"><span>Twitch</span><span>YouTube</span><span>RTMP</span></div>
-            <h2>Один эфир.<br />Твои площадки.</h2>
-            <p>Управляй трансляцией Twitch, добавляй YouTube и свои RTMP-адреса. Выбирай качество под свою сеть.</p>
-          </article>
+        <!-- VIDEO SLOT 2: replace assets/videos/browser-sources.mp4 with your own clip. -->
+        <article class="showcase-row row-left">
+          <h2 data-i18n="browserSources">Источники<br />браузера</h2>
+          <div class="video-frame glow-purple">
+            <video class="feature-video" playsinline controls preload="metadata" data-video="assets/videos/browser-sources.mp4"></video>
+            <div class="video-placeholder" data-i18n="videoPlaceholder">Здесь будет ваше видео</div>
+          </div>
+        </article>
 
-          <article class="feature-card feature-overlay">
-            <div class="card-top"><span>03 / ОФОРМЛЕНИЕ</span><span class="material-symbols-outlined card-icon" aria-hidden="true">web</span></div>
-            <div class="overlay-preview" aria-hidden="true"><span class="preview-tag">LIVE CHAT</span><span class="preview-line"></span><span class="preview-line short"></span><span class="preview-alert">+ новый донат</span></div>
-            <h2>Твой эфир.<br />Твои правила.</h2>
-            <p>Добавляй браузерные виджеты и чат Twitch. Настрой композицию прямо с телефона.</p>
-          </article>
+        <!-- VIDEO SLOT 3: replace assets/videos/twitch.mp4 with your own clip. -->
+        <article class="showcase-row row-right">
+          <div class="video-frame glow-purple">
+            <video class="feature-video" playsinline controls preload="metadata" data-video="assets/videos/twitch.mp4"></video>
+            <div class="video-placeholder" data-i18n="videoPlaceholder">Здесь будет ваше видео</div>
+          </div>
+          <h2 data-i18n="twitchIntegration">Интеграция<br />с Twitch</h2>
+        </article>
 
-          <article class="feature-card feature-control">
-            <div class="card-top"><span>04 / КОНТРОЛЬ</span><span class="material-symbols-outlined card-icon" aria-hidden="true">tune</span></div>
-            <div class="signal-graphic" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
-            <h2>Всё важное.<br />Под рукой.</h2>
-            <p>Выключай камеру и микрофон в эфире. Следи за мобильным трафиком и расходом за час.</p>
-          </article>
-        </div>
+        <!-- VIDEO SLOT 4: replace assets/videos/traffic.mp4 with your own clip. -->
+        <article class="showcase-row row-left">
+          <h2 data-i18n="traffic">Следи за<br />трафиком</h2>
+          <div class="video-frame glow-red">
+            <video class="feature-video" playsinline controls preload="metadata" data-video="assets/videos/traffic.mp4"></video>
+            <div class="video-placeholder" data-i18n="videoPlaceholder">Здесь будет ваше видео</div>
+          </div>
+        </article>
       </section>
 
-      <a class="download-callout" href="download.html"><span>ГОТОВ ВЫЙТИ В ЭФИР?</span><span class="material-symbols-outlined" aria-hidden="true">north_east</span></a>
-
-      <section class="closing-wordmark" aria-label="WIRL"><span>WIRL</span></section>
+      <section class="bottom-wordmark" aria-label="WIRL"><span>WIRL</span></section>
+      <button class="language-toggle" type="button" aria-label="Change language">EN</button>
     </main>
+    <script src="site.js"></script>
   </body>
 </html>

@@ -45,7 +45,9 @@ The README is available in English and Russian. In the current app build, most i
 ## Website and APK
 
 - Website: [vaipen.github.io/WIRL](https://vaipen.github.io/WIRL/)
-- Website source: `index.html`, `download.html`, `styles.css` and the title clip in `assets/`, published by GitHub Pages from the `main` branch and repository root.
+- Website source: `index.html`, `download.html`, `styles.css` and `site.js`, published by GitHub Pages from the `main` branch and repository root. The download page reads the latest release tag, notes and APK asset from GitHub Releases.
+- Four feature video placeholders are in `index.html`. Put clips in `assets/videos/` and update each `<video>` element's `data-video` path near the `VIDEO SLOT` comments.
+- The website detects the browser's preferred language (Russian or English); the language button switches it manually and saves the choice.
 - Android APK: to be added to GitHub Releases when a distributable build is ready.
 
 ---
@@ -95,5 +97,7 @@ README написан на русском и английском. В текущ
 ## Сайт и APK
 
 - Сайт: [vaipen.github.io/WIRL](https://vaipen.github.io/WIRL/)
-- Файлы сайта: `index.html`, `download.html`, `styles.css` и ролик первого экрана в `assets/`; GitHub Pages публикует их из корня ветки `main`.
+- Файлы сайта: `index.html`, `download.html`, `styles.css` и `site.js`; GitHub Pages публикует их из корня ветки `main`. Страница загрузки берёт тег, описание и APK последнего релиза из GitHub Releases.
+- Четыре пустых слота для видео находятся в `index.html`. Помести ролики в `assets/videos/` и поменяй путь `data-video` у нужного `<video>` рядом с комментарием `VIDEO SLOT`.
+- Язык сайта выбирается по предпочтению браузера (русский или английский); кнопка переключает его вручную и сохраняет выбор.
 - APK Android-приложения будет добавлен в GitHub Releases, когда будет готов файл для распространения.
